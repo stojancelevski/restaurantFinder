@@ -1,5 +1,7 @@
 {
   "name": "restaurants",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

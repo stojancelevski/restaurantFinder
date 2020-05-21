@@ -1,0 +1,95 @@
+[
+  {
+    "id": "0",
+    "name": "Hotel Nova Riviera",
+    "img": "https://i.ytimg.com/vi/MHjilomGQUA/hqdefault.jpg",
+    "email": "contact@novariviera.com.mk",
+    "latitude": 41.111898,
+    "longitude": 20.801600,
+    "contact": "046 209 900",
+    "food": [
+      {
+        "name": "Melted cheese",
+        "price": 160
+      },
+      {
+        "name": "Spaghetti Bolognese",
+        "price": 200
+      },
+      {
+        "name": "Rivier food platter",
+        "price": 850
+      },
+      {
+        "name": "Brushetta 4pcs.",
+        "price": 130
+      },
+      {
+        "name": "Cow's ,ilk white cheese",
+        "price": 120
+      }
+    ]
+  },
+  {
+    "id": "1",
+    "name": "Restaurant Belvedere",
+    "img": "https://vispoj.com.mk/mak/sites/default/files/styles/slider-image-1140x350/public/hotel-belvedere_0.jpg?itok=LF5e6-oT",
+    "email": "contact@belvedere.com.mk",
+    "latitude": 41.112363,
+    "longitude": 20.801236,
+    "contact": "046 231 520",
+    "food": [
+      {
+        "name": "Capresse with prosciutto",
+        "price": 360
+      },
+      {
+        "name": "Eggplant Ohrid style",
+        "price": 180
+      },
+      {
+        "name": "Peppers wiith white cheesse and cottage cheese",
+        "price": 180
+      },
+      {
+        "name": "Grilled beef steak",
+        "price": 950
+      },
+      {
+        "name": "Veal medallions in mushroom sauce",
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Restaurant Europe",
+    "img": "data:image/jpeg;base64,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",
+    "email": "contact@evropa.com.mk",
+    "latitude": 41.111640,
+    "longitude": 20.804876,
+    "contact": "046263088",
+    "food": [
+      {
+        "name": "Grilled mushrooms",
+        "price": 100
+      },
+      {
+        "name": "Frog legs",
+        "price": 430
+      },
+      {
+        "name": "Crumbed yellow cheese",
+        "price": 180
+      },
+      {
+        "name": "Grilled beef steak",
+        "price": 950
+      },
+      {
+        "name": "Steak Tartare",
+        "price": 750
+      }
+    ]
+  }
+]
