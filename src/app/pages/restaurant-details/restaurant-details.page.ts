@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Restaurant} from '../models/restaurant';
-import {RestaurantsService} from '../restaurants.service';
+import {Restaurant} from '../../models/restaurant';
+import {ToastService} from '../../services/restaurant/toast.service';
 import {ActivatedRoute} from '@angular/router';
+import {FirebaseService} from '../../services/firebase/firebase.service';
 
 @Component({
     selector: 'app-restaurant-details',
@@ -11,17 +12,15 @@ import {ActivatedRoute} from '@angular/router';
 export class RestaurantDetailsPage implements OnInit {
     restaurant: Restaurant;
 
-    constructor(private rest: RestaurantsService, private route: ActivatedRoute) {
+    constructor(private rest: FirebaseService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
             const id = params.get('id');
-            this.rest.getRestaurants().subscribe(rest => {
-                this.restaurant = rest.find(r => r.id === id);
+            this.rest.getRestaurantById(id).then(rest => {
+                this.restaurant = rest;
             });
         });
-
     }
-
 }

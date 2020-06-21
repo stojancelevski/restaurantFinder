@@ -1,0 +1,86 @@
+<ion-content>
+    <form [formGroup]="restaurantForm" style="padding-top:5px">
+        <div class="ion-text-center">
+            <ion-label>Choose landscape photo for the restaurant</ion-label>
+            <br>
+            <ion-button (click)="takePicture()" shape="rounded">
+                <ion-icon name="image"></ion-icon>
+            </ion-button>
+        </div>
+        <ion-item>
+            <ion-label position="floating">
+                Name
+            </ion-label>
+            <ion-input type="text" formControlName="name" placeholder="Enter the name of the restaurant"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">
+                Email
+            </ion-label>
+            <ion-input type="text" formControlName="email" placeholder="Enter contact email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">
+                Latitude
+            </ion-label>
+            <ion-input type="number" formControlName="latitude"
+                       placeholder="Enter Latitude of the Restaurant"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">
+                Email
+            </ion-label>
+            <ion-input type="number" formControlName="longitude"
+                       placeholder="Enter Longitude of the Restaurant"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">
+                Contact Phone
+            </ion-label>
+            <ion-input type="number" formControlName="contact" placeholder="Enter contact phone"></ion-input>
+        </ion-item>
+        <div class="ion-text-center">
+            <ion-card-title>
+                Ingredients
+            </ion-card-title>
+            <br>
+            <ion-button (click)="addItem()" color="success">
+                <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+        </div>
+        <ion-grid formArrayName="menu" *ngFor="let item of menu.controls; let i=index">
+            <ion-item-sliding>
+                <ion-item lines="none">
+                    <ion-row [formGroupName]="i">
+                        <ion-col size="6">
+                            <ion-item>
+                                <ion-label position="stacked">
+                                    Meal
+                                </ion-label>
+                                <ion-input type="text" formControlName="name"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-item>
+                                <ion-label position="stacked">
+                                    Price
+                                </ion-label>
+                                <ion-input type="number" formControlName="price"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+                <ion-item-options side="end">
+                    <ion-button color="danger" (click)="deleteItem(i)">
+                        <ion-icon name="trash"></ion-icon>
+                    </ion-button>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-grid>
+    </form>
+    <div class="ion-text-center">
+        <ion-button (click)="submit()"  [disabled]="!restaurantForm.valid"> Submit
+        </ion-button>
+
+    </div>
+</ion-content>

@@ -1,126 +1,132 @@
-[
-  {
-    "id": "0",
-    "name": "Hotel Nova Riviera",
-    "img": "https://i.ytimg.com/vi/MHjilomGQUA/hqdefault.jpg",
-    "email": "contact@novariviera.com.mk",
-    "latitude": 41.111898,
-    "longitude": 20.801600,
-    "contact": "046 209 900",
-    "food": [
-      {
-        "name": "Melted cheese",
-        "price": 160
-      },
-      {
-        "name": "Spaghetti Bolognese",
-        "price": 200
-      },
-      {
-        "name": "Rivier food platter",
-        "price": 850
-      },
-      {
-        "name": "Brushetta 4pcs.",
-        "price": 130
-      },
-      {
-        "name": "Cow's ,ilk white cheese",
-        "price": 120
-      }
-    ]
-  },
-  {
-    "id": "1",
-    "name": "Restaurant Belvedere",
-    "img": "https://vispoj.com.mk/mak/sites/default/files/styles/slider-image-1140x350/public/hotel-belvedere_0.jpg?itok=LF5e6-oT",
-    "email": "contact@belvedere.com.mk",
-    "latitude": 41.112363,
-    "longitude": 20.801236,
-    "contact": "046 231 520",
-    "food": [
-      {
-        "name": "Capresse with prosciutto",
-        "price": 360
-      },
-      {
-        "name": "Eggplant Ohrid style",
-        "price": 180
-      },
-      {
-        "name": "Peppers wiith white cheesse and cottage cheese",
-        "price": 180
-      },
-      {
-        "name": "Grilled beef steak",
-        "price": 950
-      },
-      {
-        "name": "Veal medallions in mushroom sauce",
-        "price": 850
-      }
-    ]
-  },
-  {
-    "id": "2",
-    "name": "Restoran Republika",
-    "img": "https://lh5.googleusercontent.com/p/AF1QipNL3shZ-0oc1pIA8_sikUZmVriFZASuO_C9soOo=w408-h270-k-no",
-    "email": "contact@restoranrepublika.com.mk",
-    "latitude": 41.2402093,
-    "longitude": 20.5878882,
-    "contact": "046263088",
-    "food": [
-      {
-        "name": "Grilled mushrooms",
-        "price": 100
-      },
-      {
-        "name": "Frog legs",
-        "price": 430
-      },
-      {
-        "name": "Crumbed yellow cheese",
-        "price": 180
-      },
-      {
-        "name": "Grilled beef steak",
-        "price": 950
-      },
-      {
-        "name": "Steak Tartare",
-        "price": 750
-      }
-    ]
-  },
-  {
-    "id": "3",
-    "name": "Vo Izvor",
-    "img": "https://lh5.googleusercontent.com/p/AF1QipOOqfEKOmJvVaea4eBnZpM9aVXr11LdOqT2FrRq=w408-h306-k-no",
-    "email": "contact@voizvor.com.mk",
-    "latitude": 41.2398861,
-    "longitude": 20.5861397,
-    "contact": "046263089",
-    "food": [
-      {
-        "name": "Sopska salad",
-        "price": 100
-      },
-      {
-        "name": "Fish",
-        "price": 230
-      },
-      {
-        "name": "Vegeterian dish - 4 people",
-        "price": 430
-      },
-      {
-        "name": "Pizza Vo Izvor",
-        "price": 300
-      },
-      {
-        "name": "Spaghettii Carbonara",
-        "price": 200
-      }
-    ]
-  }
-]
+{
+  "restaurants": [
+    {
+      "id": "0",
+      "name": "Hotel Nova Riviera",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurants-7b7f9.appspot.com/o/hqdefault.jpg?alt=media&token=22d85520-2fd8-45f8-a3d9-419a715c5088",
+      "email": "contact@novariviera.com.mk",
+      "latitude": 41.111898,
+      "longitude": 20.801600,
+      "contact": "046 209 900",
+      "approved": false,
+      "menu": [
+        {
+          "name": "Melted cheese",
+          "price": 160
+        },
+        {
+          "name": "Spaghetti Bolognese",
+          "price": 200
+        },
+        {
+          "name": "Rivier food platter",
+          "price": 850
+        },
+        {
+          "name": "Brushetta 4pcs.",
+          "price": 130
+        },
+        {
+          "name": "Cow's ,ilk white cheese",
+          "price": 120
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Restaurant Belvedere",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurants-7b7f9.appspot.com/o/hotel-belvedere_0.jpg?alt=media&token=9d25d481-8d21-482b-a35c-19303d20c6eb",
+      "email": "contact@belvedere.com.mk",
+      "latitude": 41.112363,
+      "longitude": 20.801236,
+      "contact": "046 231 520",
+      "approved": false,
+      "menu": [
+        {
+          "name": "Capresse with prosciutto",
+          "price": 360
+        },
+        {
+          "name": "Eggplant Ohrid style",
+          "price": 180
+        },
+        {
+          "name": "Peppers wiith white cheesse and cottage cheese",
+          "price": 180
+        },
+        {
+          "name": "Grilled beef steak",
+          "price": 950
+        },
+        {
+          "name": "Veal medallions in mushroom sauce",
+          "price": 850
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Restoran Republika",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurants-7b7f9.appspot.com/o/download.jpg?alt=media&token=e607ba9c-593d-4e17-82ec-26e6e2bbeb65",
+      "email": "contact@restoranrepublika.com.mk",
+      "latitude": 41.2402093,
+      "longitude": 20.5878882,
+      "contact": "046263088",
+      "approved": false,
+      "menu": [
+        {
+          "name": "Grilled mushrooms",
+          "price": 100
+        },
+        {
+          "name": "Frog legs",
+          "price": 430
+        },
+        {
+          "name": "Crumbed yellow cheese",
+          "price": 180
+        },
+        {
+          "name": "Grilled beef steak",
+          "price": 950
+        },
+        {
+          "name": "Steak Tartare",
+          "price": 750
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Vo Izvor",
+      "img": "https://firebasestorage.googleapis.com/v0/b/restaurants-7b7f9.appspot.com/o/download%20(1).jpg?alt=media&token=ec443f4f-f894-446e-b285-09c78710d2d9",
+      "email": "contact@voizvor.com.mk",
+      "latitude": 41.2398861,
+      "longitude": 20.5861397,
+      "contact": "046263089",
+      "approved": false,
+      "menu": [
+        {
+          "name": "Sopska salad",
+          "price": 100
+        },
+        {
+          "name": "Fish",
+          "price": 230
+        },
+        {
+          "name": "Vegeterian dish - 4 people",
+          "price": 430
+        },
+        {
+          "name": "Pizza Vo Izvor",
+          "price": 300
+        },
+        {
+          "name": "Spaghettii Carbonara",
+          "price": 200
+        }
+      ]
+    }
+  ]
+}

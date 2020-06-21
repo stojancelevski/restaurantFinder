@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="dismiss()">
+                <ion-icon name="close"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ng-container *ngFor="let restaurant of restaurants ">
+        <ion-item-sliding>
+            <ion-item>
+                <ion-card class="welcome-card">
+                    <img [src]="restaurant.img" alt=""/>
+                    <ion-card-header>
+                        <ion-card-title>{{restaurant.name}}</ion-card-title>
+                        <ion-card-subtitle>{{restaurant.email}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ng-container *ngIf="restaurant.menu">
+                            <div style="text-align: center;">
+                                <ion-card-title>
+                                    Menu Items
+                                </ion-card-title>
+                            </div>
+                            <ng-container *ngFor="let item of restaurant.menu">
+                                <ul>
+                                    <li><b>{{item.name}}  {{item.price}} | MKD</b></li>
+                                </ul>
+                            </ng-container>
+                        </ng-container>
+                    </ion-card-content>
+                </ion-card>
+            </ion-item>
+
+            <ion-item-options>
+                <ion-button color="success" (click)="updateRestaurant(restaurant.key)">
+                    <ion-icon name="checkmark"></ion-icon>
+                </ion-button>
+                <br>
+                <ion-button color="danger" (click)="deleteRestaurant(restaurant.key)">
+                    <ion-icon name="trash"></ion-icon>
+                </ion-button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ng-container>
+</ion-content>

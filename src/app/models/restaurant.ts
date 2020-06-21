@@ -1,12 +1,13 @@
 import {Menu} from './menu';
 
 export interface Restaurant {
-    id: string;
+    key: string;
     name: string;
     img: string;
     email: string;
     latitude: number;
     longitude: string;
-    food: Menu[];
+    menu: Menu[];
     contact: string;
+    approved: boolean;
 }

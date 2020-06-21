@@ -1,0 +1,37 @@
+<ion-content>
+    <agm-map
+            [latitude]="latitude"
+            [longitude]="longitude"
+            [zoom]="15"
+            [scrollwheel]="true"
+            [streetViewControl]="false"
+            [disableDefaultUI]="true"
+            [zoomControl]="false">
+
+        <agm-marker
+                *ngFor="let m of restaurants; let i = index"
+                [latitude]="m.latitude"
+                [longitude]="m.longitude"
+                [label]="m.name">
+
+            <agm-info-window>
+                <ion-card-title>{{m.name}}</ion-card-title>
+                <strong>Contact Phone: {{m.contact}}</strong><br>
+                <strong>Contact Email: {{m.email}}</strong>
+
+                <ion-button shape="block" color="primary" [routerLink]="['restaurant-details',m.key]">
+                    View Menu
+                </ion-button>
+
+
+            </agm-info-window>
+
+        </agm-marker>
+        <agm-circle [latitude]="+latitude?.toFixed(6)" [longitude]="+longitude?.toFixed(6)"
+                    [radius]="300"
+                    [fillColor]="'black'"
+                    [circleDraggable]="false"
+                    [editable]="false">
+        </agm-circle>
+    </agm-map>
+</ion-content>

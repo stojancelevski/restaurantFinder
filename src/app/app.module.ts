@@ -10,18 +10,40 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {Geolocation} from '@ionic-native/geolocation/ngx';
 import {HttpClientModule} from '@angular/common/http';
-import {RestaurantsService} from './restaurants.service';
-import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import {ToastService} from './services/restaurant/toast.service';
+import {EmailComposer} from '@ionic-native/email-composer/ngx';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {FirebaseService} from './services/firebase/firebase.service';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {Camera} from '@ionic-native/camera/ngx';
+import {AdminComponent} from './components/admin/admin.component';
+import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth/ngx';
+
+
 @NgModule({
-    declarations: [AppComponent],
-    entryComponents: [],
-    imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
+    declarations: [
+        AppComponent,
+        AdminComponent
+    ],
+    entryComponents: [
+        AdminComponent
+    ],
+    imports: [BrowserModule,
+        HttpClientModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireDatabaseModule,
+        IonicModule.forRoot(),
+        AppRoutingModule],
     providers: [
         StatusBar,
         SplashScreen,
         Geolocation,
-        RestaurantsService,
+        ToastService,
         EmailComposer,
+        FirebaseService,
+        Camera,
+        AndroidFingerprintAuth,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]

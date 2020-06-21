@@ -19,7 +19,7 @@ import {AgmCoreModule} from '@agm/core';
         RouterModule.forChild([{path: '', component: Tab1Page},
             {
                 path: 'restaurant-details/:id',
-                loadChildren: () => import('../restaurant-details/restaurant-details.module').then( m => m.RestaurantDetailsPageModule)
+                loadChildren: () => import('../restaurant-details/restaurant-details.module').then(m => m.RestaurantDetailsPageModule)
             }]),
         ReactiveFormsModule
     ],
