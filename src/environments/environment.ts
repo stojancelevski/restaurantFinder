@@ -7,7 +7,7 @@ export const environment = {
     firebase: {
         apiKey: 'AIzaSyDVV2vE-vFwq1N13kGcmi_UVDVEVhNZgxs',
         authDomain: 'restaurants-368a1.firebaseapp.com',
-        databaseURL: 'https://restaurants-368a1.firebaseio.com',
+        databaseURL: 'https://restaurants-368a1-default-rtdb.europe-west1.firebasedatabase.app',
         projectId: 'restaurants-368a1',
         storageBucket: 'restaurants-368a1.appspot.com',
         messagingSenderId: '763129834887',
