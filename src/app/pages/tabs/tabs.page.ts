@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import {ModalController} from '@ionic/angular';
-import {AdminComponent} from '../../components/admin/admin.component';
-import {ToastService} from '../../services/restaurant/toast.service';
-import {AndroidFingerprintAuth} from '@ionic-native/android-fingerprint-auth/ngx';
+import { Component } from '@angular/core';
+import { AlertController, ModalController } from '@ionic/angular';
+import { AdminComponent } from '../../components/admin/admin.component';
+import { ToastService } from '../../services/restaurant/toast.service';
+import { AndroidFingerprintAuth } from '@ionic-native/android-fingerprint-auth/ngx';
 
 @Component({
     selector: 'app-tabs',
@@ -11,7 +11,9 @@ import {AndroidFingerprintAuth} from '@ionic-native/android-fingerprint-auth/ngx
 })
 export class TabsPage {
 
-    constructor(private modalCtrl: ModalController, private toast: ToastService,
+    password = '12345678';
+
+    constructor(private modalCtrl: ModalController, private toast: ToastService, private alertCtrl: AlertController,
                 private androidFingerprintAuth: AndroidFingerprintAuth) {
     }
 
@@ -22,36 +24,40 @@ export class TabsPage {
         return await modal.present();
     }
 
-    login() {
-        this.androidFingerprintAuth.isAvailable()
-            .then((result) => {
-                if (result.isAvailable) {
-                    // it is available
-                    this.androidFingerprintAuth.encrypt({clientId: 'myAppName', username: 'myUsername', password: 'myPassword'})
-                        // tslint:disable-next-line:no-shadowed-variable
-                        .then(result => {
-                            if (result.withFingerprint) {
-                                this.presentModal();
-
-                            } else if (result.withBackup) {
-                                this.presentModal();
-                            } else {
-                                this.toast.presentToast('Didn\'t authenticate!');
-                            }
-                        })
-                        .catch(error => {
-                            if (error === this.androidFingerprintAuth.ERRORS.FINGERPRINT_CANCELLED) {
-                                this.toast.presentToast('Fingerprint authentication cancelled');
-                            } else {
-                                this.toast.presentToast(error);
-                            }
-                        });
-
-                } else {
-                    // fingerprint auth isn't available
-                    this.toast.presentToast('Fingerprint Not Available!');
+    async login() {
+        const alert = await this.alertCtrl.create({
+            header: 'Enter Password',
+            inputs: [
+                {
+                    name: 'password',
+                    type: 'password',
+                    label: 'Password',
+                    handler: (value) => {
+                        return value;
+                    },
+                },
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    cssClass: 'secondary',
+                    handler: () => {
+                        console.log('Confirm Cancel');
+                    }
+                }, {
+                    text: 'Ok',
+                    handler: (data) => {
+                        if (data.password === this.password) {
+                            this.presentModal();
+                        } else {
+                            this.toast.presentToast('Wrong password, try again!');
+                        }
+                    }
                 }
-            })
-            .catch(error => this.toast.presentToast(error));
+            ]
+        });
+
+        await alert.present();
     }
 }

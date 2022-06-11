@@ -71,7 +71,6 @@ export class Tab3Page implements OnInit {
                             this.restaurantForm.patchValue({
                                 img: value
                             });
-
                         });
                     });
             }, (err) => {
@@ -90,9 +89,13 @@ export class Tab3Page implements OnInit {
     }
 
     submit() {
-        this.fireService.createRestaurant(this.restaurantForm.value);
-        this.router.navigateByUrl('tabs/tab1');
-        this.restaurantForm.reset()
+        if (this.restaurantForm.valid) {
+            this.fireService.createRestaurant(this.restaurantForm.value);
+            this.router.navigateByUrl('tabs/tab1');
+            this.restaurantForm.reset();
+        } else {
+            this.toast.presentToast('Form not valid!');
+        }
     }
 
 }
