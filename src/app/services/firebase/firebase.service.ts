@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
-import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
-import {Restaurant} from '../../models/restaurant';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Restaurant } from '../../models/restaurant';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -18,15 +18,8 @@ export class FirebaseService {
     }
 
 
-    createRestaurant(value: Restaurant): Promise<string> {
-        return new Promise<string>((resolve, reject) => {
-            this.restaurantRef.push(value).then(value1 =>
-                resolve(value1.key)
-            ).catch(err => {
-                reject(err);
-            })
-            ;
-        });
+    createRestaurant(value: Restaurant) {
+        this.restaurantRef.push(value);
     }
 
 
@@ -46,11 +39,12 @@ export class FirebaseService {
         return this.getRestaurant().snapshotChanges().pipe(
             map(changes =>
                 changes.map(c =>
-                    ( { key: c.payload.key, ...c.payload.val() } )
+                    ({key: c.payload.key, ...c.payload.val()})
                 )
             )
         );
     }
+
     updateRestaurant(key: string, value: any) {
         return this.restaurantRef.update(key, value);
     }

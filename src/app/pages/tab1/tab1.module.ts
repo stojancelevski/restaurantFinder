@@ -14,7 +14,7 @@ import {AgmCoreModule} from '@agm/core';
         AgmCoreModule.forRoot({
             // please get your own API key here:
             // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
-            apiKey: 'AIzaSyCXJ8cbvJGdhOQYOjHk8eCEkHgr57m0GPA'
+            apiKey: 'AIzaSyAqcsIHsLSSaDbGTQ_w3M2kTAV2SOets-g'
         }),
         RouterModule.forChild([{path: '', component: Tab1Page},
             {

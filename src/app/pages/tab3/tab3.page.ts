@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Menu} from '../../models/menu';
-import {FirebaseService} from '../../services/firebase/firebase.service';
-import {Camera, CameraOptions} from '@ionic-native/camera/ngx';
-import {ToastController} from '@ionic/angular';
-import {ToastService} from '../../services/restaurant/toast.service';
-import {Geolocation} from '@ionic-native/geolocation/ngx';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Menu } from '../../models/menu';
+import { FirebaseService } from '../../services/firebase/firebase.service';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { ToastController } from '@ionic/angular';
+import { ToastService } from '../../services/restaurant/toast.service';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-tab3',
@@ -90,10 +90,9 @@ export class Tab3Page implements OnInit {
     }
 
     submit() {
-        this.fireService.createRestaurant(this.restaurantForm.value).then(() => {
-            this.router.navigateByUrl('tabs/tab1');
-            this.restaurantForm.reset();
-        });
+        this.fireService.createRestaurant(this.restaurantForm.value);
+        this.router.navigateByUrl('tabs/tab1');
+        this.restaurantForm.reset()
     }
 
 }
