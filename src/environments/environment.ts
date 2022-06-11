@@ -5,14 +5,16 @@
 export const environment = {
     production: false,
     firebase: {
-        apiKey: 'AIzaSyBlta4crs2MTTrZPKCcXLdBSGPVDqOhT3g',
-        authDomain: 'restaurants-7b7f9.firebaseapp.com',
-        databaseURL: 'https://restaurants-7b7f9.firebaseio.com',
-        projectId: 'restaurants-7b7f9',
-        storageBucket: 'restaurants-7b7f9.appspot.com',
-        messagingSenderId: '484377099583',
-        appId: '1:484377099583:web:866fe5edb7c63110db278a'
+        apiKey: 'AIzaSyDVV2vE-vFwq1N13kGcmi_UVDVEVhNZgxs',
+        authDomain: 'restaurants-368a1.firebaseapp.com',
+        databaseURL: 'https://restaurants-368a1.firebaseio.com',
+        projectId: 'restaurants-368a1',
+        storageBucket: 'restaurants-368a1.appspot.com',
+        messagingSenderId: '763129834887',
+        appId: '1:763129834887:web:d73cbeb21b2866c1163722'
     }
+
+
 };
 
 /*
